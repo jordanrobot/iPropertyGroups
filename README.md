@@ -59,25 +59,27 @@ Add iProperties to a document:
 
 ## Implementation Idea #2
 
-Perhaps the iPropertyMaps are loaded into a singleton iPropertyMapTable?  This way they can be recalled from any of your code?
+Perhaps the iPropertyMap are loaded into a singleton iPropertyMaps?  This way they can be recalled from any of your code?
 Perhaps this could work with multiple definitions?
 e.g. 
 
-    iPropertyMapTable ipmt = iPropertyMapTable.Instance();
-    ipmt.Add("Stock Part")
+    iPropertyMaps ipm = iPropertyMaps.Instance();
+
+    ipm.Add("Stock Part")
         .Load("stock-part-definition.json");
-    ipmt.Add("Fabricated Part")
+        
+    ipm.Add("Fabricated Part")
         .Load("fabricated-definition.json");
 
 or perhaps the different maps can be located in a single json file...
 
-    iPropertyMapTable ipmt = iPropertyMapTable.Instance();
-    ipmt.Load("iprop-map-definitions.json");
+    iPropertyMaps ipm = iPropertyMaps.Instance();
+    ipm.Load("iprop-map-definitions.json");
 
 or load in constructor:
 
-    iPropertyMapTable ipmt = iPropertyMapTable.Instance();
-    ipmt.Add("Stock Part")
+    iPropertyMaps ipm = iPropertyMaps.Instance();
+    ipm.Add("Stock Part")
         .Add {
             {"Property1","Default Value"},
             {"Property2","=<Title>"},
@@ -90,12 +92,12 @@ or load in constructor:
 
 elsewhere:
 
-    iPropertyMap stockPartMap = iPropertyMapTable["Stock Part"];
+    iPropertyMap stockPartMap = iPropertyMaps["Stock Part"];
     stockPartMap.Apply(document, false)
 
 or:
 
-    iPropertyMapTable["Stock Part"].Apply(document, true)
+    iPropertyMaps["Stock Part"].Apply(document, true)
 
 
 ## JSON file operability
@@ -116,10 +118,10 @@ iPropertyMap definition:
         }
     }
 
-iPropertyMapTable definition:
+iPropertyMaps definition:
 
     {
-        "Name": "The name of this iPropertyTableMap",
+        "Name": "The name of the iPropertyMaps set",
         "Table": {
             "Stock Part": {
                 "Property1": "Default Value",
