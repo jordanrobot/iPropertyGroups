@@ -1,4 +1,4 @@
-# iPropertyMap
+# iPropertyGroup
 
 A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.
 
@@ -6,30 +6,31 @@ A library for Autodesk Inventor that lets you manage user-defined groups of iPro
 
 Lets say you have a group of iProperties that you want to apply to various inventor files.  Typically you'd hard-code the groups of iProperties, the default expressions and values into iLogic scripts with the logic to manage all of this.
 
-This library aims to take most of that management drudgery out of your hands. You will be able to define a group of iProperties and default values dynamically into an iPropertyMap object. You may also be able to define iPropertyMaps in json files (I need to think on this). This object will let you apply this group to documents in your code.
+This library aims to take most of that management drudgery out of your hands. You will be able to define a group of iProperties and default values dynamically into an iPropertyGroup object.  The iPropertyGroup objects are housed and managed from an iPropertyGroups object. You will be able to define iPropertyGroups from json files.
 
+Perhaps the user could also load PropertyGroups from json files at http\[s] URIs?
 
-## Implementation Idea #1
+## Using a single PropertyGroup
 
-    iPropertyMap propMap = new iPropertyMap;
+    iPropertyGroup propGroup = new iPropertyGroup;
 
 Load from a json file:
 
-    propMap.Load("custom definitions.json");
+    propGroup.Load("custom definitions.json");
 
-or load individually...
+or load the properties individually...
 
-    propMap.Add("Property1","Default Value");
-    propMap.Add("Property2","=<Title>");
-    propMap.Add("Property3","=<Property2>");
-    propMap.Add("Property4","Default Value");
-    propMap.Add("Property5","Default Value");
-    propMap.Add("Title","This Cool Part");
-    propMap.Add("Property6","Default Value");
+    propGroup.Add("Property1","Default Value");
+    propGroup.Add("Property2","=<Title>");
+    propGroup.Add("Property3","=<Property2>");
+    propGroup.Add("Property4","Default Value");
+    propGroup.Add("Property5","Default Value");
+    propGroup.Add("Title","This Cool Part");
+    propGroup.Add("Property6","Default Value");
 
 or load in a constructor...
 
-    iPropertyMap propMap = new iPropertyMap {
+    PropertyGroup propGroup = new iPropertyGroup {
         {"Property1","Default Value"},
         {"Property2","=<Title>"},
         {"Property3","=<Property2>"},
@@ -39,72 +40,71 @@ or load in a constructor...
         {"Property6","Default Value"}
     };
 
-Test if propMap contains a property value...
+Test if propGroup contains a property value...
 
-    if (propMap.Contains("Property1"))
+    if (propGroup.Contains("Property1"))
         //do something
 
 Get value of one of the properties...
 
-    var temp = propMap["Property1"];
+    var temp = propGroup["Property1"];
 
 Set the value of one of the properties...
 
-    propMap["Property1"] = "=<Description>";
+    propGroup["Property1"] = "=<Description>";
 
-Add iProperties to a document:
+Add iProperties to a document (without overwriting existing properties):
 
-    propMap.Apply(Document doc, bool overwrite);
+    propGroup.ApplyTo(document);
+
+Add iProperties to a document (with overwriting existing properties):
+
+    propGroup.ApplyToAndOverwrite(document);
 
 
-## Implementation Idea #2
+## Using multiple PropertyGroups
 
-Perhaps the iPropertyMap are loaded into a singleton iPropertyMaps?  This way they can be recalled from any of your code?
-Perhaps this could work with multiple definitions?
-e.g. 
+You can use multiple PropertyGroup objects by utilizing the PropertyGroups object. 
 
-    iPropertyMaps ipm = iPropertyMaps.Instance();
+    PropertyGroups groups = new PropertyGroups();
 
-    ipm.Add("Stock Part")
-        .Load("stock-part-definition.json");
-        
-    ipm.Add("Fabricated Part")
-        .Load("fabricated-definition.json");
+Load from a json file:
 
-or perhaps the different maps can be located in a single json file...
+    groups.Load("custom definitions.json");
 
-    iPropertyMaps ipm = iPropertyMaps.Instance();
-    ipm.Load("iprop-map-definitions.json");
+Or perhaps load from a json file in a static constructor like so....
 
-or load in constructor:
+    PropertyGroups groups = PropertyGroups.Load("iprop-map-definitions.json");
 
-    iPropertyMaps ipm = iPropertyMaps.Instance();
-    ipm.Add("Stock Part")
-        .Add {
-            {"Property1","Default Value"},
-            {"Property2","=<Title>"},
-            {"Property3","=<Property2>"},
-            {"Property4","Default Value"},
-            {"Property5","Default Value"},
-            {"Title","This Cool Part"},
-            {"Property6","Default Value"}
-        };
 
-elsewhere:
+or load each PropertyGroup individually...
 
-    iPropertyMap stockPartMap = iPropertyMaps["Stock Part"];
-    stockPartMap.Apply(document, false)
+    groups.Add("name", PropertyGroup);
+    groups.Add("name2", PropertyGroup);
+    groups.Add("name3", PropertyGroup);
 
-or:
+remove a PropertyGroup...
 
-    iPropertyMaps["Stock Part"].Apply(document, true)
+    groups.Remove("name", PropertyGroup);
+
+
+To apply a PropertyGroup to a document:
+
+(C# example):
+
+    groups["Stock Part"].ApplyTo(document)
+
+(VBA example):
+
+    groups("Stock Part").ApplyTo(document)
+
 
 
 ## JSON file operability
 
-I'm still not convinced that this is super useful, but it may be a way to share definitions across code-bases, and update the definitions without touching deployed code.
+This is a way to share definitions across code-bases, and update the PropertyGroup definitions without touching deployed code.
 
-iPropertyMap definition:
+iPropertyGroup definition:
 
     {
         "Stock Part": {
@@ -118,11 +118,10 @@ iPropertyMap definition:
         }
     }
 
-iPropertyMaps definition:
+iPropertyGroups definition:
 
     {
-        "Name": "The name of the iPropertyMaps set",
-        "Table": {
+        "Groups": {
             "Stock Part": {
                 "Property1": "Default Value",
                 "Property2": "=<Title>",
@@ -143,3 +142,49 @@ iPropertyMaps definition:
             }
         }
     }
+
+## Structure
+
+Target: .net Standard 2.0
+
+PropertyGroups : <IDictionary>?
+    - List<iPropertyGroup> groups
+    + Add (string Name, List<PropertyGroupEntry>)
+    + this[string key]
+    + Load (string jsonFile)
+        (internal code idea...)
+        Deserialize JSON
+        var response = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string,string>>>(json);
+        foreach (string key in response.keys){
+            PropertyGroup group = new PropertyGroup(key, response[key])
+            groups.Add(group)
+        }
+    + Save (string jsonFile)?
+        Serialize JSON?
+
+PropertyGroup
+    + PropertyGroup ()
+    + PropertyGroup (string Name, Dictionary<string,string>)
+    + this[string key]
+    + Add (string key, string value)
+    + Remove (string key)
+    + Count () : long
+    + ApplyTo(Inventor.Document document)
+    + ApplyToAndOverwrite(Inventor.Document document)
+    + Load???? (string jsonFile)
+
+PropertyEditor
+    // Manages writing the property to the document, keeps rest of code isolated from inventor & testable
+    // a renamed copy of [PropertyShim.cs]https://github.com/InventorCode/InventorShims/blob/master/src/InventorShims/PropertyShim.cs) from [InventorShims](https://github.com/InventorCode/InventorShims)
+
+
+
+## Singleton Idea?
+
+Perhaps the iPropertyGroup are loaded into a singleton iPropertyGroups?  This way they can be recalled after loaded from a single instance?
+e.g. 
+
+    iPropertyGroups groups = iPropertyGroups.Instance();
+
+* How would you know the singleton had been loaded and configured before you ran it?
+* Would the user define the singleton loading procedure in an instance loader?  This seems messy.
