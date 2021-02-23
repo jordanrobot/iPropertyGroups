@@ -4,9 +4,11 @@ A library for Autodesk Inventor that lets you manage user-defined groups of iPro
 
 ### What does it do?
 
-Lets say you have a group of iProperties that you want to apply to various inventor files.  Typically you'd hard-code a bunch of iProperties, default expressions/values into your code.  Then you'd write custom logic to manage and apply these to documents.
+Lets say you have a group of iProperties that you want to apply to various Inventor files.  Typically you'd hard-code a bunch of iProperties and default expressions/values into your code.  Then you'd write custom logic to manage and apply these to documents.
 
 This library aims to take most of that management drudgery out of your hands. You will be able to define a group of iProperties and default values dynamically (and simply) into an PropertyGroup object.  The definitions are a dictionary of simple strings.  If you have multiple PropertyGroup objects, they can be managed from an PropertyGroups object.  You will also be able to define PropertyGroup(s) objects from json files.  (Perhaps the user could also load PropertyGroups from json files at http(s) URIs?)
+
+This library will not do any checks against what documents are suitable to be modified (e.g. content center files, library files, etc).
 
 
 ## Class Structure Ideas
@@ -178,11 +180,12 @@ iPropertyGroups definition:
         }
     }
 
-## Build Targets
+## Build
 
 Build Target: .net Standard 2.0
-Test Build Target: .net 5.0
+Tests Build Target: .net 5.0
 
+This project aims to be developed primarily via Test Driven Development. The only bits of code that will not be driven by TDD are the bits that interface with Inventor itself.
 
 ## PropertyGroups.Load implementation idea
 
