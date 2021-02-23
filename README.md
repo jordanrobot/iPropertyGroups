@@ -2,15 +2,46 @@
 
 A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.
 
-### Rough Thoughts
+### What does it do?
 
-Lets say you have a group of iProperties that you want to apply to various inventor files.  Typically you'd hard-code the groups of iProperties, the default expressions and values into iLogic scripts with the logic to manage all of this.
+Lets say you have a group of iProperties that you want to apply to various inventor files.  Typically you'd hard-code a bunch of iProperties, default expressions/values into your code.  Then you'd write custom logic to manage and apply these to documents.
 
-This library aims to take most of that management drudgery out of your hands. You will be able to define a group of iProperties and default values dynamically into an iPropertyGroup object.  The iPropertyGroup objects are housed and managed from an iPropertyGroups object. You will be able to define iPropertyGroups from json files.
+This library aims to take most of that management drudgery out of your hands. You will be able to define a group of iProperties and default values dynamically (and simply) into an PropertyGroup object.  The definitions are a dictionary of simple strings.  If you have multiple PropertyGroup objects, they can be managed from an PropertyGroups object.  You will also be able to define PropertyGroup(s) objects from json files.  (Perhaps the user could also load PropertyGroups from json files at http(s) URIs?)
 
-Perhaps the user could also load PropertyGroups from json files at http\[s] URIs?
+
+## Class Structure Ideas
+
+### PropertyGroups
+
++ Groups : (Dictionary<string,PropertyGroup>)
++ this[string key] : PropertyGroup
++ Load (string jsonFile)
++ Add (string Name, List<PropertyGroupEntry>)
++ Remove (string Name)
++ Count() : int
++ Save (string jsonFile)?
+
+### PropertyGroup
+
++ PropertyGroup ()
++ PropertyGroup (string Name, Dictionary<string,string>)
++ Group : (Dictionary<string,string>)
++ this[string key] : string
++ Load (string jsonFile)
++ Add (string key, string value)
++ Remove (string key)
++ Count () : int
++ ApplyTo(Inventor.Document document)
++ ApplyToAndOverwrite(Inventor.Document document)
+
+### PropertyEditor (internal class)
+
+- Manages writing the property to the document, keeps rest of code isolated from inventor & testable
+- a renamed copy of [PropertyShim.cs]https://github.com/InventorCode/InventorShims/blob/master/src/InventorShims/PropertyShim.cs) from [InventorShims](https://github.com/InventorCode/InventorShims)
 
 ## Using a single PropertyGroup
+
+Constructor:
 
     iPropertyGroup propGroup = new iPropertyGroup;
 
@@ -28,7 +59,7 @@ or load the properties individually...
     propGroup.Add("Title","This Cool Part");
     propGroup.Add("Property6","Default Value");
 
-or load in a constructor...
+or load in a constructor manually...
 
     PropertyGroup propGroup = new iPropertyGroup {
         {"Property1","Default Value"},
@@ -39,6 +70,10 @@ or load in a constructor...
         {"Title","This Cool Part"},
         {"Property6","Default Value"}
     };
+
+or load into a static constructor from a json file:
+
+    PropertyGroup group = PropertyGroup.Load("custom definitions.json");
 
 Test if propGroup contains a property value...
 
@@ -143,40 +178,22 @@ iPropertyGroups definition:
         }
     }
 
-## Structure
+## Build Targets
 
-Target: .net Standard 2.0
+Build Target: .net Standard 2.0
+Test Build Target: .net 5.0
 
-PropertyGroups : <IDictionary>?
-    - List<iPropertyGroup> groups
-    + Add (string Name, List<PropertyGroupEntry>)
-    + this[string key]
-    + Load (string jsonFile)
-        (internal code idea...)
-        Deserialize JSON
+
+## PropertyGroups.Load implementation idea
+
+    {
+        //Deserialize JSON
         var response = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string,string>>>(json);
         foreach (string key in response.keys){
             PropertyGroup group = new PropertyGroup(key, response[key])
             groups.Add(group)
         }
-    + Save (string jsonFile)?
-        Serialize JSON?
-
-PropertyGroup
-    + PropertyGroup ()
-    + PropertyGroup (string Name, Dictionary<string,string>)
-    + this[string key]
-    + Add (string key, string value)
-    + Remove (string key)
-    + Count () : long
-    + ApplyTo(Inventor.Document document)
-    + ApplyToAndOverwrite(Inventor.Document document)
-    + Load???? (string jsonFile)
-
-PropertyEditor
-    // Manages writing the property to the document, keeps rest of code isolated from inventor & testable
-    // a renamed copy of [PropertyShim.cs]https://github.com/InventorCode/InventorShims/blob/master/src/InventorShims/PropertyShim.cs) from [InventorShims](https://github.com/InventorCode/InventorShims)
-
+    }
 
 
 ## Singleton Idea?
