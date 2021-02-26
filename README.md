@@ -17,11 +17,11 @@ This library will not do any checks against what documents are suitable to be mo
 
 + Groups : (Dictionary<string,PropertyGroup>)
 + this[string key] : PropertyGroup
-+ Load (string jsonFile)
+- Load (string jsonFile)
 + Add (string Name, List<PropertyGroupEntry>)
-+ Remove (string Name)
+- Remove (string Name)
 + Count() : int
-+ Save (string jsonFile)?
+- Save (string jsonFile)?
 
 ### PropertyGroup
 
@@ -29,7 +29,7 @@ This library will not do any checks against what documents are suitable to be mo
 + PropertyGroup (string Name, Dictionary<string,string>)
 + Group : (Dictionary<string,string>)
 + this[string key] : string
-+ Load (string jsonFile)
+- Load (string jsonFile)
 + Add (string key, string value)
 + Remove (string key)
 + Count () : int
@@ -182,8 +182,8 @@ iPropertyGroups definition:
 
 ## Build
 
-Build Target: .net Standard 2.0
-Tests Build Target: .net 5.0
+* Build Target: .net Framework 4.7
+* Tests Build Target: .net 5.0
 
 This project aims to be developed primarily via Test Driven Development. The only bits of code that will not be driven by TDD are the bits that interface with Inventor itself.
 
