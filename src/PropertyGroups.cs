@@ -23,13 +23,6 @@ namespace iPropertyGroups
             _groups.Add(item, props);
         }
 
-        //public PropertyGroup Item(string key)
-        //{
-        //    if (Groups.ContainsKey(key))
-        //        return Groups[key];
-
-        //    return null;
-        //}
 
         public PropertyGroup this[string key]
         {
