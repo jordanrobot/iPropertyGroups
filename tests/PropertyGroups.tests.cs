@@ -101,6 +101,29 @@ namespace PropertyGroupsTests
     }
 
     [TestClass]
+    public class Remove_tests
+    {
+        [TestMethod]
+        public void Remove_item_ItemDoesNotExist()
+        {
+            //setup
+            const string item = "Test Item";
+            Dictionary<string, string> props = new Dictionary<string, string> {
+                { "name1", "value1" }, { "name2", "value2" } };
+
+            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroups groups = new PropertyGroups();
+            groups.Add(item, group);
+
+            //execute
+            groups.Remove(item);
+
+            //validate
+            Assert.IsNull(groups[item]);
+        }
+
+    }
+    [TestClass]
     public class Count
     {
         [TestMethod]

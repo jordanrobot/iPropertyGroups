@@ -23,6 +23,16 @@ namespace iPropertyGroups
             _groups.Add(item, props);
         }
 
+        public void Remove(string key)
+        {
+            if (_groups.ContainsKey(key))
+            {
+                _groups.Remove(key);
+            }
+            else
+            {
+            }
+        }
 
         public PropertyGroup this[string key]
         {
