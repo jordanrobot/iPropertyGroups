@@ -61,5 +61,10 @@ namespace iPropertyGroups
                 }
             }
         }
+
+        public long Count()
+        {
+            return Groups.Count;
+        }
     }
 }

@@ -99,4 +99,25 @@ namespace PropertyGroupsTests
             Assert.AreEqual(groups[item].Properties["name1"], "value1");
         }
     }
+
+    [TestClass]
+    public class Count
+    {
+        [TestMethod]
+        public void Count_returnsCorrectNumber()
+        {
+            //setup
+            const string item = "Test Item";
+            Dictionary<string, string> props = new Dictionary<string, string> {
+                { "name1", "value1" }, { "name2", "value2" } };
+
+            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroups groups = new PropertyGroups();
+            groups.Add(item, group);
+
+            //execute
+            //validate
+            Assert.AreEqual(groups.Count(), 1);
+        }
+    }
 }
