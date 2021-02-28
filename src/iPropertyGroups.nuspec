@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0</version>
+    <title>iPropertyGroups</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>https://github.com/jordanrobot/iPropertyGroups</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</description>
+    <releaseNotes>Initial Release.</releaseNotes>
+    <copyright>Copyright 2021</copyright>
+    <tags>utodesk Inventor</tags>
+  </metadata>
+</package>
