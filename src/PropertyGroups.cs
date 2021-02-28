@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
@@ -8,7 +7,6 @@ namespace iPropertyGroups
 {
     [Serializable]
     public class PropertyGroups
-    // : IEnumerable
     {
         private Dictionary<string, PropertyGroup> _groups =
             new Dictionary<string, PropertyGroup>();
@@ -23,15 +21,9 @@ namespace iPropertyGroups
             _groups.Add(item, props);
         }
 
-        public void Remove(string key)
+        public bool Remove(string key)
         {
-            if (_groups.ContainsKey(key))
-            {
-                _groups.Remove(key);
-            }
-            else
-            {
-            }
+            return _groups.Remove(key);
         }
 
         public PropertyGroup this[string key]

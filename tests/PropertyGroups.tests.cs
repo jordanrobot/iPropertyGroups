@@ -29,7 +29,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
                 { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
             groups.Add(item, group);
 
@@ -48,7 +48,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
             { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
             groups.Add(item, group);
 
@@ -71,7 +71,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
                 { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
 
             //execute
@@ -89,7 +89,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
                 { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
 
             //execute
@@ -111,7 +111,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
                 { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
             groups.Add(item, group);
 
@@ -121,8 +121,8 @@ namespace PropertyGroupsTests
             //validate
             Assert.IsNull(groups[item]);
         }
-
     }
+
     [TestClass]
     public class Count
     {
@@ -134,7 +134,7 @@ namespace PropertyGroupsTests
             Dictionary<string, string> props = new Dictionary<string, string> {
                 { "name1", "value1" }, { "name2", "value2" } };
 
-            PropertyGroup group = new PropertyGroup("Test string", props);
+            PropertyGroup group = new PropertyGroup(props);
             PropertyGroups groups = new PropertyGroups();
             groups.Add(item, group);
 
