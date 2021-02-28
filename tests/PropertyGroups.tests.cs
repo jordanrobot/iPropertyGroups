@@ -143,4 +143,70 @@ namespace PropertyGroupsTests
             Assert.AreEqual(groups.Count(), 1);
         }
     }
+
+    [TestClass]
+    public class Load_tests
+    {
+        [TestMethod]
+        public void Load_LoadFile_WithoutException()
+        {
+            //setup
+
+            //execute
+            PropertyGroups groups = PropertyGroups.LoadJson(@"resources\test-config.json");
+
+            //validate
+            var _ = groups["Stock Part"].Count();
+        }
+
+        [TestMethod]
+        public void Load_CountPropertyInside_CorrectNumber()
+        {
+            //setup
+            PropertyGroups groups = PropertyGroups.LoadJson(@"resources\test-config.json");
+
+            //execute
+            var testCount = groups["Stock Part"].Count();
+
+            //validate
+            Assert.AreEqual(testCount, 7);
+        }
+
+        [TestMethod]
+        public void SaveTest_createsFile()
+        {
+            //setup
+            Dictionary<string, string> props = new Dictionary<string, string> {
+                { "name1", "value1" }, { "name2", "value2" },{"name3","value3" }};
+            PropertyGroup group = new PropertyGroup(props);
+
+            Dictionary<string, string> props2 = new Dictionary<string, string> {
+                { "nameA", "valueA" }, { "nameB", "valueB" },{"nameC","valueC" }};
+            PropertyGroup group2 = new PropertyGroup(props2);
+
+
+            PropertyGroups groups = new PropertyGroups();
+            groups.Add("Group1", group);
+            groups.Add("Group2", group2);
+            var _executableLocation = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            var file = System.IO.Path.Combine(_executableLocation, "output.json");
+
+            //execute
+            groups.SaveJson(file);
+
+            //validate
+            try
+            {
+                Assert.IsTrue(System.IO.File.Exists(file));
+            }
+            finally
+            {
+                try
+                {
+                    System.IO.File.Delete(file);
+                }
+                catch { }
+            }
+        }
+    }
 }

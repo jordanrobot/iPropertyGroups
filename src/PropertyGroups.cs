@@ -61,5 +61,46 @@ namespace iPropertyGroups
         {
             return Groups.Count;
         }
+
+        public void SaveJson(string filePath)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+            serializer.NullValueHandling = NullValueHandling.Ignore;
+
+            StreamWriter sw = new StreamWriter(filePath);
+            JsonWriter writer = new JsonTextWriter(sw);
+            serializer.Serialize(writer, this);
+            writer.Close();
+        }
+
+        public static PropertyGroups LoadJson(string filePath)
+        {
+            var _configRaw = GetFileContents(filePath);
+            return DeserializeConfiguration(_configRaw);
+        }
+
+        private static string GetFileContents(string filePath)
+        {
+            try
+            {
+                return File.ReadAllText(filePath);
+            }
+            catch (Exception e)
+            {
+                throw new SystemException("There was an error reading the json configuration file from disk.  Process was aborted, press any key to continue...", e);
+            }
+        }
+
+        private static PropertyGroups DeserializeConfiguration(string _configRaw)
+        {
+            try
+            {
+                return JsonConvert.DeserializeObject<PropertyGroups>(_configRaw);
+            }
+            catch (Exception e)
+            {
+                throw new SystemException("The configuration was invalid, please verify json file syntax.  Process was aborted, press any key to continue...", e);
+            }
+        }
     }
 }
