@@ -17,19 +17,18 @@ This library will not do any checks against what documents are suitable to be mo
 
 + Groups : (Dictionary<string,PropertyGroup>)
 + this[string key] : PropertyGroup
-- Load (string jsonFile)
 + Add (string Name, List<PropertyGroupEntry>)
-- Remove (string Name)
++ Remove (string Name)
 + Count() : int
-- Save (string jsonFile)?
++ SaveJson (string jsonFile)
++ LoadJson (string jsonFile)
 
 ### PropertyGroup
 
-+ PropertyGroup ()
++ PropertyGroup () : IDictionary<string, string>
 + PropertyGroup (string Name, Dictionary<string,string>)
 + Group : (Dictionary<string,string>)
 + this[string key] : string
-- Load (string jsonFile)
 + Add (string key, string value)
 + Remove (string key)
 + Count () : int
@@ -47,11 +46,7 @@ Constructor:
 
     iPropertyGroup propGroup = new iPropertyGroup;
 
-Load from a json file:
-
-    propGroup.Load("custom definitions.json");
-
-or load the properties individually...
+Load the properties individually...
 
     propGroup.Add("Property1","Default Value");
     propGroup.Add("Property2","=<Title>");
@@ -72,10 +67,6 @@ or load in a constructor manually...
         {"Title","This Cool Part"},
         {"Property6","Default Value"}
     };
-
-or load into a static constructor from a json file:
-
-    PropertyGroup group = PropertyGroup.Load("custom definitions.json");
 
 Test if propGroup contains a property value...
 
@@ -107,11 +98,11 @@ You can use multiple PropertyGroup objects by utilizing the PropertyGroups objec
 
 Load from a json file:
 
-    groups.Load("custom definitions.json");
+    groups.LoadJson("custom definitions.json");
 
 Or perhaps load from a json file in a static constructor like so....
 
-    PropertyGroups groups = PropertyGroups.Load("iprop-map-definitions.json");
+    PropertyGroups groups = PropertyGroups.LoadJson("iprop-map-definitions.json");
 
 
 or load each PropertyGroup individually...
@@ -133,27 +124,13 @@ To apply a PropertyGroup to a document:
 
 (VBA example):
 
-    groups("Stock Part").ApplyTo(document)
+    groups.Item("Stock Part").ApplyTo(document)
 
 
 
 ## JSON file operability
 
 This is a way to share definitions across code-bases, and update the PropertyGroup definitions without touching deployed code.
-
-iPropertyGroup definition:
-
-    {
-        "Stock Part": {
-            "Property1": "Default Value",
-            "Property2": "=<Title>",
-            "Property3": "=<Property2>",
-            "Property4": "Default Value",
-            "Property5": "Default Value",
-            "Title": "This Cool Part",
-            "Property6": "Default Value"
-        }
-    }
 
 iPropertyGroups definition:
 
@@ -186,25 +163,3 @@ iPropertyGroups definition:
 * Tests Build Target: .net 5.0
 
 This project aims to be developed primarily via Test Driven Development. The only bits of code that will not be driven by TDD are the bits that interface with Inventor itself.
-
-## PropertyGroups.Load implementation idea
-
-    {
-        //Deserialize JSON
-        var response = JsonConvert.DeserializeObject<Dictionary<string,Dictionary<string,string>>>(json);
-        foreach (string key in response.keys){
-            PropertyGroup group = new PropertyGroup(key, response[key])
-            groups.Add(group)
-        }
-    }
-
-
-## Singleton Idea?
-
-Perhaps the iPropertyGroup are loaded into a singleton iPropertyGroups?  This way they can be recalled after loaded from a single instance?
-e.g. 
-
-    iPropertyGroups groups = iPropertyGroups.Instance();
-
-* How would you know the singleton had been loaded and configured before you ran it?
-* Would the user define the singleton loading procedure in an instance loader?  This seems messy.
