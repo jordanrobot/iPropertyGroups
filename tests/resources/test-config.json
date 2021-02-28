@@ -1,0 +1,22 @@
+{
+  "Groups": {
+    "Stock Part": {
+        "Property1": "Default Value",
+        "Property2": "=<Title>",
+        "Property3": "=<Property4>",
+        "Property4": "A copy of Prop 4!",
+        "Property5": "Prop 5 Prop 5",
+        "Title": "This Cool Part",
+        "Property6": "Stuff stuff stuff"
+    },
+    "Fabricated Part": {
+        "Property1": "Default Value",
+        "Property2": "=<Title>",
+        "Property3": "=<Property2>",
+        "Property4": "Property4 Value",
+        "Property5": "This is custom!",
+        "Title": "This Cool Part",
+        "Property6": "Prop6 valllluessss"
+    }
+  }
+}
