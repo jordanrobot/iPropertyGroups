@@ -2,15 +2,14 @@
 Imports System.Collections.Generic
 Imports iPropertyGroups
 
+'Create dictionary manually, and populate with iProperty keys and values...
 Dim props As Dictionary(Of String, String) = New Dictionary(Of String, String) From {
 	{"name1", "value1" },
 	{"name2", "value2"},
 	{"variableThing", "valuesssss"},
 	{"Title", "stuff stuff!"}}
 
-props.Add("Mirror", "=<Title>")
-
-
-Dim oGroup As PropertyGroup = New PropertyGroup("", props)
+'Create the PropertyGroup and Apply it to the active document
+Dim oGroup As PropertyGroup = New PropertyGroup(props)
 Dim oDoc As Inventor.Document = ThisApplication.ActiveDocument
 oGroup.ApplyToAndOverwrite(oDoc)
