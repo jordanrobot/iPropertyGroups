@@ -7,7 +7,7 @@ namespace iPropertyGroups
     /// <summary>
     /// Static class to manipulate iproperties for a provided Document object.
     /// </summary>
-    public static class PropertyEditor
+    internal static class PropertyEditor
     {
             private static Dictionary<string, string> NativePropertyLookup = new Dictionary<string, string>()
         {
