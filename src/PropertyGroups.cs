@@ -5,10 +5,17 @@ using System.IO;
 
 namespace iPropertyGroups
 {
+    /// <summary>
+    /// Represents a dictionary of PropertyGroup objects.
+    /// </summary>
     [Serializable]
     public class PropertyGroups
     {
         private Dictionary<string, PropertyGroup> _groups =
+        /// <summary>
+        /// Main dictionary object that holds the PropertyGroup objects.
+        /// </summary>
+        public Dictionary<string, PropertyGroup> Groups { get; set; } =
             new Dictionary<string, PropertyGroup>();
         public Dictionary<string, PropertyGroup> Groups
         {
@@ -16,16 +23,31 @@ namespace iPropertyGroups
             set { _groups = value; }
         }
 
+        /// <summary>
+        /// Adds the specified key and value to the collection.
+        /// </summary>
+        /// <param name="item">Name of the PropertyGroup</param>
+        /// <param name="props">The PropertyGroup object</param>
         public void Add(string item, PropertyGroup props)
         {
             _groups.Add(item, props);
         }
 
+        /// <summary>
+        /// Removes the specified value with the specified key from the PropertyGroups&lt;string, PropertyGroup&gt; dictionary.
+        /// </summary>
+        /// <param name="key">Name of PropertyGroup</param>
+        /// <returns>true if the element is successfully found and removed; otherwise, false. This method returns false if the key is not found in the PropertyGroups&lt;string, PropertyGroup&gt;</returns>
         public bool Remove(string key)
         {
             return _groups.Remove(key);
         }
 
+        /// <summary>
+        /// Returns a Dictionary value for the provided key.
+        /// </summary>
+        /// <param name="key">Name of the PropertyGroup</param>
+        /// <returns>PropertyGroup object</returns>
         public PropertyGroup this[string key]
         {
             get
@@ -57,11 +79,19 @@ namespace iPropertyGroups
             }
         }
 
+        /// <summary>
+        /// Gets the number of key/value pairs in the PropertyGroups&lt;string, PropertyGroup&gt; object.
+        /// </summary>
+        /// <returns>the number of key/value pairs as long.</returns>
         public long Count()
         {
             return Groups.Count;
         }
 
+        /// <summary>
+        /// Saves the PropertyGroups&lt;string, PropertyGroup&gt; object to a json file.
+        /// </summary>
+        /// <param name="filePath">The file path to save the json file.</param>
         public void SaveJson(string filePath)
         {
             JsonSerializer serializer = new JsonSerializer();
@@ -73,6 +103,11 @@ namespace iPropertyGroups
             writer.Close();
         }
 
+        /// <summary>
+        /// A static method to load a json file into a new PropertyGroups&lt;string, PropertyGroup&gt; object.
+        /// </summary>
+        /// <param name="filePath">The file path of the json file.</param>
+        /// <returns>PropertyGroups&lt;string, PropertyGroup&gt; if successful; otherwise returns null.</returns>
         public static PropertyGroups LoadJson(string filePath)
         {
             var _configRaw = GetFileContents(filePath);

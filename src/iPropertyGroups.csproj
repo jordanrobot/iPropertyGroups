@@ -17,6 +17,11 @@
 	<Description>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</Description>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\mjordan\_Sync\dev\github\iPropertyGroups\src\iPropertyGroups.xml</DocumentationFile>
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
 	<PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
