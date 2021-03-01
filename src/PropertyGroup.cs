@@ -122,6 +122,9 @@ namespace iPropertyGroups
                 WriteIPropertyToDocument(document, key, Properties[key]);
             }
 
+            document = null;
+            GC.WaitForPendingFinalizers();
+
         }
 
         /// <summary>
@@ -135,6 +138,10 @@ namespace iPropertyGroups
                 if (!PropertyEditor.PropertyExists(document, key))
                     WriteIPropertyToDocument(document, key, Properties[key]);
             }
+
+            document = null;
+            GC.WaitForPendingFinalizers();
+
         }
 
         private void WriteIPropertyToDocument(Document document, string key, string value)
@@ -145,6 +152,8 @@ namespace iPropertyGroups
             }
             catch
             {
+                document = null;
+                GC.WaitForPendingFinalizers();
             }
         }
 

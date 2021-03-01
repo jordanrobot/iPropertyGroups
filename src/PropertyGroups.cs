@@ -101,6 +101,10 @@ namespace iPropertyGroups
             JsonWriter writer = new JsonTextWriter(sw);
             serializer.Serialize(writer, this);
             writer.Close();
+
+            serializer = null;
+            writer = null;
+            GC.WaitForPendingFinalizers();
         }
 
         /// <summary>
