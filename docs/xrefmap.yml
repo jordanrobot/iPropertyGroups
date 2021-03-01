@@ -1,0 +1,430 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: iPropertyGroups
+  name: iPropertyGroups
+  href: api/iPropertyGroups.html
+  commentId: N:iPropertyGroups
+  fullName: iPropertyGroups
+  nameWithType: iPropertyGroups
+- uid: iPropertyGroups.PropertyGroup
+  name: PropertyGroup
+  href: api/iPropertyGroups.PropertyGroup.html
+  commentId: T:iPropertyGroups.PropertyGroup
+  fullName: iPropertyGroups.PropertyGroup
+  nameWithType: PropertyGroup
+- uid: iPropertyGroups.PropertyGroup.#ctor
+  name: PropertyGroup()
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup__ctor
+  commentId: M:iPropertyGroups.PropertyGroup.#ctor
+  fullName: iPropertyGroups.PropertyGroup.PropertyGroup()
+  nameWithType: PropertyGroup.PropertyGroup()
+- uid: iPropertyGroups.PropertyGroup.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})
+  name: PropertyGroup(Dictionary<String, String>)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup__ctor_System_Collections_Generic_Dictionary_System_String_System_String__
+  commentId: M:iPropertyGroups.PropertyGroup.#ctor(System.Collections.Generic.Dictionary{System.String,System.String})
+  name.vb: PropertyGroup(Dictionary(Of String, String))
+  fullName: iPropertyGroups.PropertyGroup.PropertyGroup(System.Collections.Generic.Dictionary<System.String, System.String>)
+  fullName.vb: iPropertyGroups.PropertyGroup.PropertyGroup(System.Collections.Generic.Dictionary(Of System.String, System.String))
+  nameWithType: PropertyGroup.PropertyGroup(Dictionary<String, String>)
+  nameWithType.vb: PropertyGroup.PropertyGroup(Dictionary(Of String, String))
+- uid: iPropertyGroups.PropertyGroup.#ctor*
+  name: PropertyGroup
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup__ctor_
+  commentId: Overload:iPropertyGroups.PropertyGroup.#ctor
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.PropertyGroup
+  nameWithType: PropertyGroup.PropertyGroup
+- uid: iPropertyGroups.PropertyGroup.Add(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name: Add(KeyValuePair<String, String>)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Add_System_Collections_Generic_KeyValuePair_System_String_System_String__
+  commentId: M:iPropertyGroups.PropertyGroup.Add(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name.vb: Add(KeyValuePair(Of String, String))
+  fullName: iPropertyGroups.PropertyGroup.Add(System.Collections.Generic.KeyValuePair<System.String, System.String>)
+  fullName.vb: iPropertyGroups.PropertyGroup.Add(System.Collections.Generic.KeyValuePair(Of System.String, System.String))
+  nameWithType: PropertyGroup.Add(KeyValuePair<String, String>)
+  nameWithType.vb: PropertyGroup.Add(KeyValuePair(Of String, String))
+- uid: iPropertyGroups.PropertyGroup.Add(System.String,System.String)
+  name: Add(String, String)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Add_System_String_System_String_
+  commentId: M:iPropertyGroups.PropertyGroup.Add(System.String,System.String)
+  fullName: iPropertyGroups.PropertyGroup.Add(System.String, System.String)
+  nameWithType: PropertyGroup.Add(String, String)
+- uid: iPropertyGroups.PropertyGroup.Add*
+  name: Add
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Add_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Add
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Add
+  nameWithType: PropertyGroup.Add
+- uid: iPropertyGroups.PropertyGroup.ApplyTo(Inventor.Document)
+  name: ApplyTo(Document)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ApplyTo_Inventor_Document_
+  commentId: M:iPropertyGroups.PropertyGroup.ApplyTo(Inventor.Document)
+  fullName: iPropertyGroups.PropertyGroup.ApplyTo(Inventor.Document)
+  nameWithType: PropertyGroup.ApplyTo(Document)
+- uid: iPropertyGroups.PropertyGroup.ApplyTo*
+  name: ApplyTo
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ApplyTo_
+  commentId: Overload:iPropertyGroups.PropertyGroup.ApplyTo
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.ApplyTo
+  nameWithType: PropertyGroup.ApplyTo
+- uid: iPropertyGroups.PropertyGroup.ApplyToAndOverwrite(Inventor.Document)
+  name: ApplyToAndOverwrite(Document)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ApplyToAndOverwrite_Inventor_Document_
+  commentId: M:iPropertyGroups.PropertyGroup.ApplyToAndOverwrite(Inventor.Document)
+  fullName: iPropertyGroups.PropertyGroup.ApplyToAndOverwrite(Inventor.Document)
+  nameWithType: PropertyGroup.ApplyToAndOverwrite(Document)
+- uid: iPropertyGroups.PropertyGroup.ApplyToAndOverwrite*
+  name: ApplyToAndOverwrite
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ApplyToAndOverwrite_
+  commentId: Overload:iPropertyGroups.PropertyGroup.ApplyToAndOverwrite
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.ApplyToAndOverwrite
+  nameWithType: PropertyGroup.ApplyToAndOverwrite
+- uid: iPropertyGroups.PropertyGroup.Clear
+  name: Clear()
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Clear
+  commentId: M:iPropertyGroups.PropertyGroup.Clear
+  fullName: iPropertyGroups.PropertyGroup.Clear()
+  nameWithType: PropertyGroup.Clear()
+- uid: iPropertyGroups.PropertyGroup.Clear*
+  name: Clear
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Clear_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Clear
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Clear
+  nameWithType: PropertyGroup.Clear
+- uid: iPropertyGroups.PropertyGroup.Contains(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name: Contains(KeyValuePair<String, String>)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Contains_System_Collections_Generic_KeyValuePair_System_String_System_String__
+  commentId: M:iPropertyGroups.PropertyGroup.Contains(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name.vb: Contains(KeyValuePair(Of String, String))
+  fullName: iPropertyGroups.PropertyGroup.Contains(System.Collections.Generic.KeyValuePair<System.String, System.String>)
+  fullName.vb: iPropertyGroups.PropertyGroup.Contains(System.Collections.Generic.KeyValuePair(Of System.String, System.String))
+  nameWithType: PropertyGroup.Contains(KeyValuePair<String, String>)
+  nameWithType.vb: PropertyGroup.Contains(KeyValuePair(Of String, String))
+- uid: iPropertyGroups.PropertyGroup.Contains*
+  name: Contains
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Contains_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Contains
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Contains
+  nameWithType: PropertyGroup.Contains
+- uid: iPropertyGroups.PropertyGroup.ContainsKey(System.String)
+  name: ContainsKey(String)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ContainsKey_System_String_
+  commentId: M:iPropertyGroups.PropertyGroup.ContainsKey(System.String)
+  fullName: iPropertyGroups.PropertyGroup.ContainsKey(System.String)
+  nameWithType: PropertyGroup.ContainsKey(String)
+- uid: iPropertyGroups.PropertyGroup.ContainsKey*
+  name: ContainsKey
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_ContainsKey_
+  commentId: Overload:iPropertyGroups.PropertyGroup.ContainsKey
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.ContainsKey
+  nameWithType: PropertyGroup.ContainsKey
+- uid: iPropertyGroups.PropertyGroup.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.String}[],System.Int32)
+  name: CopyTo(KeyValuePair<String, String>[], Int32)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_CopyTo_System_Collections_Generic_KeyValuePair_System_String_System_String____System_Int32_
+  commentId: M:iPropertyGroups.PropertyGroup.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.String}[],System.Int32)
+  name.vb: CopyTo(KeyValuePair(Of String, String)(), Int32)
+  fullName: iPropertyGroups.PropertyGroup.CopyTo(System.Collections.Generic.KeyValuePair<System.String, System.String>[], System.Int32)
+  fullName.vb: iPropertyGroups.PropertyGroup.CopyTo(System.Collections.Generic.KeyValuePair(Of System.String, System.String)(), System.Int32)
+  nameWithType: PropertyGroup.CopyTo(KeyValuePair<String, String>[], Int32)
+  nameWithType.vb: PropertyGroup.CopyTo(KeyValuePair(Of String, String)(), Int32)
+- uid: iPropertyGroups.PropertyGroup.CopyTo*
+  name: CopyTo
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_CopyTo_
+  commentId: Overload:iPropertyGroups.PropertyGroup.CopyTo
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.CopyTo
+  nameWithType: PropertyGroup.CopyTo
+- uid: iPropertyGroups.PropertyGroup.Count
+  name: Count()
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Count
+  commentId: M:iPropertyGroups.PropertyGroup.Count
+  fullName: iPropertyGroups.PropertyGroup.Count()
+  nameWithType: PropertyGroup.Count()
+- uid: iPropertyGroups.PropertyGroup.Count*
+  name: Count
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Count_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Count
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Count
+  nameWithType: PropertyGroup.Count
+- uid: iPropertyGroups.PropertyGroup.GetEnumerator
+  name: GetEnumerator()
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_GetEnumerator
+  commentId: M:iPropertyGroups.PropertyGroup.GetEnumerator
+  fullName: iPropertyGroups.PropertyGroup.GetEnumerator()
+  nameWithType: PropertyGroup.GetEnumerator()
+- uid: iPropertyGroups.PropertyGroup.GetEnumerator*
+  name: GetEnumerator
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_GetEnumerator_
+  commentId: Overload:iPropertyGroups.PropertyGroup.GetEnumerator
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.GetEnumerator
+  nameWithType: PropertyGroup.GetEnumerator
+- uid: iPropertyGroups.PropertyGroup.IsReadOnly
+  name: IsReadOnly
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_IsReadOnly
+  commentId: P:iPropertyGroups.PropertyGroup.IsReadOnly
+  fullName: iPropertyGroups.PropertyGroup.IsReadOnly
+  nameWithType: PropertyGroup.IsReadOnly
+- uid: iPropertyGroups.PropertyGroup.IsReadOnly*
+  name: IsReadOnly
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_IsReadOnly_
+  commentId: Overload:iPropertyGroups.PropertyGroup.IsReadOnly
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.IsReadOnly
+  nameWithType: PropertyGroup.IsReadOnly
+- uid: iPropertyGroups.PropertyGroup.Item(System.String)
+  name: Item[String]
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Item_System_String_
+  commentId: P:iPropertyGroups.PropertyGroup.Item(System.String)
+  name.vb: Item(String)
+  fullName: iPropertyGroups.PropertyGroup.Item[System.String]
+  fullName.vb: iPropertyGroups.PropertyGroup.Item(System.String)
+  nameWithType: PropertyGroup.Item[String]
+  nameWithType.vb: PropertyGroup.Item(String)
+- uid: iPropertyGroups.PropertyGroup.Item*
+  name: Item
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Item_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Item
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Item
+  nameWithType: PropertyGroup.Item
+- uid: iPropertyGroups.PropertyGroup.Keys
+  name: Keys
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Keys
+  commentId: P:iPropertyGroups.PropertyGroup.Keys
+  fullName: iPropertyGroups.PropertyGroup.Keys
+  nameWithType: PropertyGroup.Keys
+- uid: iPropertyGroups.PropertyGroup.Keys*
+  name: Keys
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Keys_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Keys
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Keys
+  nameWithType: PropertyGroup.Keys
+- uid: iPropertyGroups.PropertyGroup.Properties
+  name: Properties
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Properties
+  commentId: P:iPropertyGroups.PropertyGroup.Properties
+  fullName: iPropertyGroups.PropertyGroup.Properties
+  nameWithType: PropertyGroup.Properties
+- uid: iPropertyGroups.PropertyGroup.Properties*
+  name: Properties
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Properties_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Properties
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Properties
+  nameWithType: PropertyGroup.Properties
+- uid: iPropertyGroups.PropertyGroup.Remove(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name: Remove(KeyValuePair<String, String>)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Remove_System_Collections_Generic_KeyValuePair_System_String_System_String__
+  commentId: M:iPropertyGroups.PropertyGroup.Remove(System.Collections.Generic.KeyValuePair{System.String,System.String})
+  name.vb: Remove(KeyValuePair(Of String, String))
+  fullName: iPropertyGroups.PropertyGroup.Remove(System.Collections.Generic.KeyValuePair<System.String, System.String>)
+  fullName.vb: iPropertyGroups.PropertyGroup.Remove(System.Collections.Generic.KeyValuePair(Of System.String, System.String))
+  nameWithType: PropertyGroup.Remove(KeyValuePair<String, String>)
+  nameWithType.vb: PropertyGroup.Remove(KeyValuePair(Of String, String))
+- uid: iPropertyGroups.PropertyGroup.Remove(System.String)
+  name: Remove(String)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Remove_System_String_
+  commentId: M:iPropertyGroups.PropertyGroup.Remove(System.String)
+  fullName: iPropertyGroups.PropertyGroup.Remove(System.String)
+  nameWithType: PropertyGroup.Remove(String)
+- uid: iPropertyGroups.PropertyGroup.Remove*
+  name: Remove
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Remove_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Remove
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Remove
+  nameWithType: PropertyGroup.Remove
+- uid: iPropertyGroups.PropertyGroup.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#String}}#Count
+  name: ICollection<KeyValuePair<String, String>>.Count
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_System_String___Count
+  commentId: P:iPropertyGroups.PropertyGroup.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#String}}#Count
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.String>>.Count
+  fullName.vb: iPropertyGroups.PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+  nameWithType: PropertyGroup.ICollection<KeyValuePair<String, String>>.Count
+  nameWithType.vb: PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+- uid: iPropertyGroups.PropertyGroup.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#String}}#Count*
+  name: ICollection<KeyValuePair<String, String>>.Count
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_Generic_ICollection_System_Collections_Generic_KeyValuePair_System_String_System_String___Count_
+  commentId: Overload:iPropertyGroups.PropertyGroup.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{System#String,System#String}}#Count
+  isSpec: "True"
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String, System.String>>.Count
+  fullName.vb: iPropertyGroups.PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+  nameWithType: PropertyGroup.ICollection<KeyValuePair<String, String>>.Count
+  nameWithType.vb: PropertyGroup.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<System.String,System.String>>.Count
+- uid: iPropertyGroups.PropertyGroup.System#Collections#Generic#IDictionary{System#String,System#String}#Remove(System.String)
+  name: IDictionary<String, String>.Remove(String)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_Generic_IDictionary_System_String_System_String__Remove_System_String_
+  commentId: M:iPropertyGroups.PropertyGroup.System#Collections#Generic#IDictionary{System#String,System#String}#Remove(System.String)
+  name.vb: System.Collections.Generic.IDictionary<System.String,System.String>.Remove(String)
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.Generic.IDictionary<System.String, System.String>.Remove(System.String)
+  fullName.vb: iPropertyGroups.PropertyGroup.System.Collections.Generic.IDictionary<System.String,System.String>.Remove(System.String)
+  nameWithType: PropertyGroup.IDictionary<String, String>.Remove(String)
+  nameWithType.vb: PropertyGroup.System.Collections.Generic.IDictionary<System.String,System.String>.Remove(String)
+- uid: iPropertyGroups.PropertyGroup.System#Collections#Generic#IDictionary{System#String,System#String}#Remove*
+  name: IDictionary<String, String>.Remove
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_Generic_IDictionary_System_String_System_String__Remove_
+  commentId: Overload:iPropertyGroups.PropertyGroup.System#Collections#Generic#IDictionary{System#String,System#String}#Remove
+  isSpec: "True"
+  name.vb: System.Collections.Generic.IDictionary<System.String,System.String>.Remove
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.Generic.IDictionary<System.String, System.String>.Remove
+  fullName.vb: iPropertyGroups.PropertyGroup.System.Collections.Generic.IDictionary<System.String,System.String>.Remove
+  nameWithType: PropertyGroup.IDictionary<String, String>.Remove
+  nameWithType.vb: PropertyGroup.System.Collections.Generic.IDictionary<System.String,System.String>.Remove
+- uid: iPropertyGroups.PropertyGroup.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:iPropertyGroups.PropertyGroup.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: PropertyGroup.IEnumerable.GetEnumerator()
+  nameWithType.vb: PropertyGroup.System.Collections.IEnumerable.GetEnumerator()
+- uid: iPropertyGroups.PropertyGroup.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:iPropertyGroups.PropertyGroup.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: iPropertyGroups.PropertyGroup.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: PropertyGroup.IEnumerable.GetEnumerator
+  nameWithType.vb: PropertyGroup.System.Collections.IEnumerable.GetEnumerator
+- uid: iPropertyGroups.PropertyGroup.TryGetValue(System.String,System.String@)
+  name: TryGetValue(String, out String)
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_TryGetValue_System_String_System_String__
+  commentId: M:iPropertyGroups.PropertyGroup.TryGetValue(System.String,System.String@)
+  name.vb: TryGetValue(String, ByRef String)
+  fullName: iPropertyGroups.PropertyGroup.TryGetValue(System.String, out System.String)
+  fullName.vb: iPropertyGroups.PropertyGroup.TryGetValue(System.String, ByRef System.String)
+  nameWithType: PropertyGroup.TryGetValue(String, out String)
+  nameWithType.vb: PropertyGroup.TryGetValue(String, ByRef String)
+- uid: iPropertyGroups.PropertyGroup.TryGetValue*
+  name: TryGetValue
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_TryGetValue_
+  commentId: Overload:iPropertyGroups.PropertyGroup.TryGetValue
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.TryGetValue
+  nameWithType: PropertyGroup.TryGetValue
+- uid: iPropertyGroups.PropertyGroup.Values
+  name: Values
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Values
+  commentId: P:iPropertyGroups.PropertyGroup.Values
+  fullName: iPropertyGroups.PropertyGroup.Values
+  nameWithType: PropertyGroup.Values
+- uid: iPropertyGroups.PropertyGroup.Values*
+  name: Values
+  href: api/iPropertyGroups.PropertyGroup.html#iPropertyGroups_PropertyGroup_Values_
+  commentId: Overload:iPropertyGroups.PropertyGroup.Values
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroup.Values
+  nameWithType: PropertyGroup.Values
+- uid: iPropertyGroups.PropertyGroups
+  name: PropertyGroups
+  href: api/iPropertyGroups.PropertyGroups.html
+  commentId: T:iPropertyGroups.PropertyGroups
+  fullName: iPropertyGroups.PropertyGroups
+  nameWithType: PropertyGroups
+- uid: iPropertyGroups.PropertyGroups.Add(System.String,iPropertyGroups.PropertyGroup)
+  name: Add(String, PropertyGroup)
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Add_System_String_iPropertyGroups_PropertyGroup_
+  commentId: M:iPropertyGroups.PropertyGroups.Add(System.String,iPropertyGroups.PropertyGroup)
+  fullName: iPropertyGroups.PropertyGroups.Add(System.String, iPropertyGroups.PropertyGroup)
+  nameWithType: PropertyGroups.Add(String, PropertyGroup)
+- uid: iPropertyGroups.PropertyGroups.Add*
+  name: Add
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Add_
+  commentId: Overload:iPropertyGroups.PropertyGroups.Add
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.Add
+  nameWithType: PropertyGroups.Add
+- uid: iPropertyGroups.PropertyGroups.Count
+  name: Count()
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Count
+  commentId: M:iPropertyGroups.PropertyGroups.Count
+  fullName: iPropertyGroups.PropertyGroups.Count()
+  nameWithType: PropertyGroups.Count()
+- uid: iPropertyGroups.PropertyGroups.Count*
+  name: Count
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Count_
+  commentId: Overload:iPropertyGroups.PropertyGroups.Count
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.Count
+  nameWithType: PropertyGroups.Count
+- uid: iPropertyGroups.PropertyGroups.Groups
+  name: Groups
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Groups
+  commentId: P:iPropertyGroups.PropertyGroups.Groups
+  fullName: iPropertyGroups.PropertyGroups.Groups
+  nameWithType: PropertyGroups.Groups
+- uid: iPropertyGroups.PropertyGroups.Groups*
+  name: Groups
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Groups_
+  commentId: Overload:iPropertyGroups.PropertyGroups.Groups
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.Groups
+  nameWithType: PropertyGroups.Groups
+- uid: iPropertyGroups.PropertyGroups.Item(System.String)
+  name: Item[String]
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Item_System_String_
+  commentId: P:iPropertyGroups.PropertyGroups.Item(System.String)
+  name.vb: Item(String)
+  fullName: iPropertyGroups.PropertyGroups.Item[System.String]
+  fullName.vb: iPropertyGroups.PropertyGroups.Item(System.String)
+  nameWithType: PropertyGroups.Item[String]
+  nameWithType.vb: PropertyGroups.Item(String)
+- uid: iPropertyGroups.PropertyGroups.Item*
+  name: Item
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Item_
+  commentId: Overload:iPropertyGroups.PropertyGroups.Item
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.Item
+  nameWithType: PropertyGroups.Item
+- uid: iPropertyGroups.PropertyGroups.LoadJson(System.String)
+  name: LoadJson(String)
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_LoadJson_System_String_
+  commentId: M:iPropertyGroups.PropertyGroups.LoadJson(System.String)
+  fullName: iPropertyGroups.PropertyGroups.LoadJson(System.String)
+  nameWithType: PropertyGroups.LoadJson(String)
+- uid: iPropertyGroups.PropertyGroups.LoadJson*
+  name: LoadJson
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_LoadJson_
+  commentId: Overload:iPropertyGroups.PropertyGroups.LoadJson
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.LoadJson
+  nameWithType: PropertyGroups.LoadJson
+- uid: iPropertyGroups.PropertyGroups.Remove(System.String)
+  name: Remove(String)
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Remove_System_String_
+  commentId: M:iPropertyGroups.PropertyGroups.Remove(System.String)
+  fullName: iPropertyGroups.PropertyGroups.Remove(System.String)
+  nameWithType: PropertyGroups.Remove(String)
+- uid: iPropertyGroups.PropertyGroups.Remove*
+  name: Remove
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_Remove_
+  commentId: Overload:iPropertyGroups.PropertyGroups.Remove
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.Remove
+  nameWithType: PropertyGroups.Remove
+- uid: iPropertyGroups.PropertyGroups.SaveJson(System.String)
+  name: SaveJson(String)
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_SaveJson_System_String_
+  commentId: M:iPropertyGroups.PropertyGroups.SaveJson(System.String)
+  fullName: iPropertyGroups.PropertyGroups.SaveJson(System.String)
+  nameWithType: PropertyGroups.SaveJson(String)
+- uid: iPropertyGroups.PropertyGroups.SaveJson*
+  name: SaveJson
+  href: api/iPropertyGroups.PropertyGroups.html#iPropertyGroups_PropertyGroups_SaveJson_
+  commentId: Overload:iPropertyGroups.PropertyGroups.SaveJson
+  isSpec: "True"
+  fullName: iPropertyGroups.PropertyGroups.SaveJson
+  nameWithType: PropertyGroups.SaveJson
