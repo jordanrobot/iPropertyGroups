@@ -26,7 +26,6 @@ namespace iPropertyGroups
         /// </summary>
         public ICollection<string> Values => Properties.Values;
 
-        int ICollection<KeyValuePair<string, string>>.Count => (int)this.Count();
         /// <summary>
         /// Gets the number of key/value pairs in the PropertyGroup Dictionary&lt;string, string&gt;
         /// </summary>
@@ -150,10 +149,15 @@ namespace iPropertyGroups
             {
                 PropertyEditor.SetPropertyValue(document, key, value);
             }
-            catch
+            catch (Exception e)
+            {
+                throw new SystemException("Cannot write the iProperty " + key + " for some reason.", e);
+            }
+            finally
             {
                 document = null;
                 GC.WaitForPendingFinalizers();
+
             }
         }
 

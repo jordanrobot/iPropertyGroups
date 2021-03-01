@@ -11,17 +11,11 @@ namespace iPropertyGroups
     [Serializable]
     public class PropertyGroups
     {
-        private Dictionary<string, PropertyGroup> _groups =
         /// <summary>
         /// Main dictionary object that holds the PropertyGroup objects.
         /// </summary>
         public Dictionary<string, PropertyGroup> Groups { get; set; } =
             new Dictionary<string, PropertyGroup>();
-        public Dictionary<string, PropertyGroup> Groups
-        {
-            get { return _groups; }
-            set { _groups = value; }
-        }
 
         /// <summary>
         /// Adds the specified key and value to the collection.
@@ -30,7 +24,7 @@ namespace iPropertyGroups
         /// <param name="props">The PropertyGroup object</param>
         public void Add(string item, PropertyGroup props)
         {
-            _groups.Add(item, props);
+            Groups.Add(item, props);
         }
 
         /// <summary>
@@ -40,7 +34,7 @@ namespace iPropertyGroups
         /// <returns>true if the element is successfully found and removed; otherwise, false. This method returns false if the key is not found in the PropertyGroups&lt;string, PropertyGroup&gt;</returns>
         public bool Remove(string key)
         {
-            return _groups.Remove(key);
+            return Groups.Remove(key);
         }
 
         /// <summary>
@@ -53,9 +47,9 @@ namespace iPropertyGroups
             get
             {
                 // If this key is in the dictionary, return its value.
-                if (_groups.ContainsKey(key))
+                if (Groups.ContainsKey(key))
                 {
-                    return _groups[key];
+                    return Groups[key];
                 }
                 else
                 {
@@ -66,16 +60,7 @@ namespace iPropertyGroups
             set
             {
                 // If this key is in the dictionary, change its value.
-                if (_groups.ContainsKey(key))
-                {
-                    // The key was found; change its value.
-                    _groups[key] = (PropertyGroup)value;
-                }
-                else
-                {
-                    // This key is not in the dictionary; add this key/value pair.
-                    _groups.Add(key, (PropertyGroup)value);
-                }
+                Groups[key] = (PropertyGroup)value;
             }
         }
 
@@ -94,8 +79,10 @@ namespace iPropertyGroups
         /// <param name="filePath">The file path to save the json file.</param>
         public void SaveJson(string filePath)
         {
-            JsonSerializer serializer = new JsonSerializer();
-            serializer.NullValueHandling = NullValueHandling.Ignore;
+            JsonSerializer serializer = new JsonSerializer
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            };
 
             StreamWriter sw = new StreamWriter(filePath);
             JsonWriter writer = new JsonTextWriter(sw);
