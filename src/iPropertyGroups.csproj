@@ -15,6 +15,7 @@
 	<PackageTags>Autodesk Inventor</PackageTags>
 	<PackageReleaseNotes>Initial Release</PackageReleaseNotes>
 	<Description>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</Description>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
