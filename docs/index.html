@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>This is the HOMEPAGE. | iPropertyGroups Documentation </title>
+    <title>iPropertyGroups | iPropertyGroups Documentation </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="This is the HOMEPAGE. | iPropertyGroups Documentation ">
+    <meta name="title" content="iPropertyGroups | iPropertyGroups Documentation ">
     <meta name="generator" content="docfx 2.56.6.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -60,13 +60,105 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="this-is-the-homepage">This is the <strong>HOMEPAGE</strong>.</h1>
+<h1 id="ipropertygroups">iPropertyGroups</h1>
 
-<p>Refer to <a href="http://daringfireball.net/projects/markdown/">Markdown</a> for how to write markdown files.</p>
-<h2 id="quick-start-notes">Quick Start Notes:</h2>
+<p>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</p>
+<h3 id="what-does-it-do">What does it do?</h3>
+<p>Lets say you have a group of iProperties that you want to apply to various Inventor files.  Typically you'd hard-code a bunch of iProperties and default expressions/values into your code.  Then you'd write custom logic to manage and apply these to documents.</p>
+<p>This library takes most of that management drudgery out of your hands. You can define a group of iProperties into an PropertyGroup object.  The PropertyGroup objects are a dictionaries of simple strings with some extra methods.  If you have multiple PropertyGroup objects, they can be managed from an PropertyGroups object.  You can load PropertyGroups objects from json files.</p>
+<p>This library will not do any checks against what documents are suitable to be modified (e.g. content center files, library files, etc).</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>First off, you'll want to download or build a copy of the iPropertyGroups.dll file. There are several options available:</p>
 <ol>
-<li>Add images to the <em>images</em> folder if the file is referencing an image.</li>
+<li>Include the <a href="https://www.nuget.org/packages/JordanRobot.iPropertyGroups/">iPropertyGroups nuget package</a> in your .net project.</li>
+<li>Visit the <a href="https://github.com/jordanrobot/iPropertyGroups/releases">Releases page</a> and download the compiled iPropertyGroups.dll and reference it in your Inventor iLogic or add-in code.</li>
+<li>Clone this repo and building the dll yourself.</li>
+<li>Copy out the methods, classes, or modules that are useful and include those in your own code.</li>
+<li>Use the code in this package as reference material.</li>
 </ol>
+<h2 id="how-to-use">How to Use</h2>
+<ul>
+<li><p>For iLogic, add the following code in your iLogic rule header:</p>
+<pre><code class="lang-VB">AddReference &quot;iPropertyGroups.dll&quot;
+Imports iPropertyGroups
+
+'Add your code here, include iPropertyGroups API functions as you need...
+</code></pre>
+</li>
+<li><p>For add-in development, add the iPropertyGroups.dll as a reference to your project.</p>
+</li>
+<li><p>Visit the <a href="https://github.com/jordanrobot/iPropertyGroups/tree/main/samples">samples/</a> folder for iLogic rule examples.</p>
+</li>
+<li><p>Here is a simple iLogic rule showing the library in use:</p>
+<pre><code class="lang-VB">AddReference &quot;iPropertyGroups.dll&quot;
+Imports iPropertyGroups
+
+'Create a PropertyGroups object and load a json file into the object.
+Dim oGroups As PropertyGroups = PropertyGroups.LoadJson(&quot;C:\Path\to\your\propertygroups-definition.json&quot;)
+
+'Get active document object...
+Dim oDoc As Inventor.Document = ThisApplication.ActiveDocument
+
+'Apply PropertyGroups object to the document...
+oGroups.Item(&quot;Stock Part&quot;).ApplyToAndOverwrite(oDoc)
+</code></pre>
+</li>
+</ul>
+<h2 id="api-reference">API Reference</h2>
+<p>Please find the <a href="https://jordanrobot.github.io/iPropertyGroups/api/iPropertyGroups.html">API Reference here</a>.</p>
+<h2 id="json-file-schema">JSON File Schema</h2>
+<p>You can save your PropertyGroups object in a json file, to share definitions across code-bases.  This allows you to modify the PropertyGroup definitions without touching your deployed code.</p>
+<ul>
+<li><p>Generic JSON schema:</p>
+<pre><code>{
+    &quot;Groups&quot;: {
+        PropertyGroup Name: {
+            iProperty Name: iProperty Value,
+            iProperty Name: iProperty Value,
+            etc
+        },
+        PropertyGroup2 Name: {
+            iProperty Name: iProperty Value,
+            iProperty Name: iProperty Value,
+            etc
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>An actual JSON file example:</p>
+<pre><code class="lang-JSON">{
+    &quot;Groups&quot;: {
+        &quot;Purchased&quot;: {
+            &quot;Title&quot;: &quot;=&lt;Description&gt;&quot;,
+            &quot;Manufacturer&quot;: &quot;ACME&quot;,
+            &quot;Source&quot; : &quot;Purchased&quot;,
+            &quot;Material Number&quot;: &quot;&quot;,
+            &quot;Inventory Number&quot; : &quot;default&quot;,
+            &quot;Part Number&quot; : &quot;=&lt;Inventory Number&gt;&quot;
+        },
+        &quot;Fabricated&quot;: {
+            &quot;Title&quot;: &quot;=&lt;Description&gt; &lt;MaterialNumber&gt;&quot;,
+            &quot;Manufacturer&quot;: &quot;&quot;,
+            &quot;Source&quot; : &quot;FABRICATED&quot;,
+            &quot;Material Number&quot;: &quot;000-005&quot;,
+            &quot;Inventory Number&quot; : &quot;default&quot;,
+            &quot;Part Number&quot; : &quot;=&lt;Drawing Number&gt;&quot;,
+            &quot;Drawing Number&quot; : &quot;default&quot;
+        }
+    }
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="build">Build</h2>
+<ul>
+<li>Build Target: .net Framework 4.7</li>
+<li>Tests Build Target: .net 5.0</li>
+</ul>
+<p>This project aims to be developed primarily via Test Driven Development. The only bits of code that will not be driven by TDD are the bits that interface with Inventor itself.</p>
+<h2 id="license">License</h2>
+<p>This code is under an MIT license.</p>
 </article>
           </div>
           
