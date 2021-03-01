@@ -1,6 +1,6 @@
 ﻿AddReference "iPropertyGroups.dll"
 Imports iPropertyGroups
-Dim oGroups As PropertyGroups = PropertyGroups.LoadJson("C:\Users\mjordan\_Sync\dev\github\iPropertyGroups\samples\config.json")
+Dim oGroups As PropertyGroups = PropertyGroups.LoadJson("C:\Users\mjordan\_Sync\dev\github\iPropertyGroups\samples\sample-propertygroups-definition.json")
 Dim oDoc As Inventor.Document = ThisApplication.ActiveDocument
 oGroups.Item("Stock Part").ApplyToAndOverwrite(oDoc)
 
