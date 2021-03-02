@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>iPropertyGroups</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
@@ -10,8 +10,8 @@
     <projectUrl>https://github.com/jordanrobot/iPropertyGroups</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</description>
-    <releaseNotes>Initial Release.</releaseNotes>
+    <releaseNotes>Updated NewtonSoft.Json to version that ships with Inventor 2021.</releaseNotes>
     <copyright>Copyright 2021</copyright>
-    <tags>utodesk Inventor</tags>
+    <tags>Autodesk Inventor</tags>
   </metadata>
 </package>
