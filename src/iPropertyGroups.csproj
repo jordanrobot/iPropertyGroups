@@ -32,9 +32,9 @@
   </ItemGroup>
 
   <ItemGroup>
-	<Reference Include="Autodesk.Inventor.Interop">
-	  <HintPath>..\packages\Autodesk.Inventor.Interop.dll</HintPath>
-	</Reference>
+    <Reference Include="Autodesk.Inventor.Interop">
+      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\Inventor 2021\Bin\Public Assemblies\Autodesk.Inventor.Interop.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

@@ -31,6 +31,18 @@ This library will not do any checks against what documents are suitable to be mo
 
 Find the detailed instructions and API reference [here](https://jordanrobot.github.io/iPropertyGroups/index.html).
 
+### Dependencies
+
+- Newtonsoft.Json (10.0.1) to match Autodesk Inventor 2021's version
+
+If building project:
+
+- Inventor.Interop - user will have to point to the Inventor.Interop location on their own machine.  Is usually located "C:\Program Files\Autodesk\Inventor XXXX\Bin\Public Assemblies\Autodesk.Inventor.Interop.dll", where XXXX is the year.
+
+Tests:
+
+- 
+
 ## License
 
 This code is under an MIT license.
