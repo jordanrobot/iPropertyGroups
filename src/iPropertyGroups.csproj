@@ -20,7 +20,11 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
 	<DocumentationFile>C:\Users\mjordan\_Sync\dev\github\iPropertyGroups\src\iPropertyGroups.xml</DocumentationFile>
-	<OutputPath></OutputPath>
+	<OutputPath>..\artifacts\Debug</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\artifacts\Release</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
