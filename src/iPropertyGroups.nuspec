@@ -2,15 +2,15 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>iPropertyGroups</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/jordanrobot/iPropertyGroups/main/LICENSE</licenseUrl>
     <projectUrl>https://github.com/jordanrobot/iPropertyGroups</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A library for Autodesk Inventor that lets you manage user-defined groups of iProperties.</description>
-    <releaseNotes>Updated NewtonSoft.Json to version that ships with Inventor 2021.</releaseNotes>
+    <releaseNotes>Included MIT license and removed local reference to Inventor.Interop in packages directory.</releaseNotes>
     <copyright>Copyright 2021</copyright>
     <tags>Autodesk Inventor</tags>
   </metadata>
